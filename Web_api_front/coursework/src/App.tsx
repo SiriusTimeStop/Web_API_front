@@ -1,39 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import 'antd/dist/reset.css';
-import { Card, Button, DatePicker } from 'antd';
+//import './App.css'
+import { Layout, Space} from 'antd';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+//import Landing from "./components/Landing"
+import Home from './components/Home';
+import Dashboard from './components/Dashboard';
+import About from './components/About';
+import DetailArticle from './components/DetailArticle';
+import NewArticles from './components/NewArticles';
+import LoginForm from './components/LoginForm';
 
-let counter = 0
-const onChange: DatePickerProps['onChange'] = (date, dateString) => {
- console.log(date, dateString);
-};
-const onClick = (event: any) => {
- console.log(counter++)
-}
+const { Header, Content, Footer } = Layout;
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <>
-      <div >
- <Card title="Default card" style={{ width: 300 }}>
- <p>Card content</p>
- <p>Card content</p>
- <p>Card content 123</p>
- </Card>
+    <Router>
+      <Header>
 
- <br/>
+        {/* Navigation bar */}
+        <nav>
+          <Space>
+            <Link to="/">Home</Link>
+            <Link to="/dashboard">Dashboard</Link>
+            <Link to="/about">About</Link> 
+            <Link to="/newarticle">New</Link>
+            <LoginForm />
+          </Space>
+        </nav>
+      </Header>
 
- <Button type="primary" onClick={onClick}>Button</Button>
- <Button type="primary" danger>Button</Button>
- <br/>
-<DatePicker onChange={onChange} />
- </div>  
-    </>
+      <Content>
+        
+        {/* Routes */}
+        <Routes>
+          <Route index element={ <Home /> } />
+          <Route path="/dashboard" element={<Dashboard />}  />  
+          <Route path="/about" element={<About />}  />
+          <Route path="/:aid" element = {<DetailArticle /> } />
+          <Route path="/newarticle" element= {<NewArticles />} />
+        </Routes>
+      </Content>
+      <Footer>
+        <p>VT6003CEM Demo</p>
+      </Footer>
+    </Router>
   )
 }
-
-export default App
