@@ -1,10 +1,13 @@
-import React from 'react';
+//import React from 'react';
 import Landing from './Landing'
 
 
 const Dashboard = () => {
-  return (<><h1>Dashboard</h1>
-          <Landing />
-    </>)}
+  return (<>
+  <p></p>
+  <h2 style={{color:"#135200",marginLeft:"25px"}}><strong>Dashboard</strong></h2>
+        <Landing />
+  </>)
+}
 
 export default Dashboard;

@@ -1,6 +1,7 @@
 import 'antd/dist/reset.css';
 import { Card} from 'antd';
 
+const { Meta } = Card;
 
 const BriefArticle = () => {
   return (
