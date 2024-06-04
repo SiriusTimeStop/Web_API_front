@@ -7,6 +7,7 @@ import { Row, Col, Space } from 'antd';
 import { Avatar, Image } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import EditForm from "./EditForm";
+import EditDogForm from './EditDogForm';
 
 
 const Profile: React.FC = () => {
@@ -68,7 +69,7 @@ console.log('current user' + JSON.stringify(currentUser))
       <Col span={18}>
         
         <div style={{marginLeft:"15px",marginBottom:"15px"}}>
-        { currentUser.role=="admin"&&  <EditForm  isNew={true} />}<h3> Create New Article</h3></div>
+        { currentUser.role=="admin"&&  <EditDogForm  isNew={true} />}<h3> Create New Dog Blog</h3></div>
       </Col>    
       </Row>
         
