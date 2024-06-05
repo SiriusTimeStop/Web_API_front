@@ -34,7 +34,7 @@ console.log('current user' + JSON.stringify(currentUser))
           <th align="left" style={{background:"#f4ffb8"}}>Username:   </th>
           <td style={{background:"#f4ffb8"}}>{currentUser.username}</td>
         </tr>  
-        <tr> 
+        <tr>  
           <th align="left" style={{background:"#d3f261"}}>Email:  </th> 
           <td style={{background:"#d3f261"}}>{currentUser.email}</td>
         </tr> 

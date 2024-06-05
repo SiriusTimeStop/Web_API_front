@@ -50,14 +50,15 @@ export default function App() {
           <div> <Space> 
             <Link to={"/"} >
             <img
-              src="/src/assets/small_Coventry_University.png"
+              src="/src/assets/dogLogo.png"
               alt="profile-img"
               className="profile-img-card"
+              style={{ width: '150px', height: '50px', float:'left', margin: '10px 10px 10px 10px' }}
             />
             </Link>   
-          <Link to="/"><HomeOutlined style={{ fontSize: '32px', }} /></Link>
-            <Link to="/dashboard"><DashboardOutlined style={{ fontSize: '32px', }}/></Link>
-          <Link to="/about"><InfoCircleOutlined style={{ fontSize: '32px', }}/></Link>
+          <Link to="/"><HomeOutlined style={{ fontSize: '32px', color:"Tomato" }} /></Link>
+            <Link to="/dashboard"><DashboardOutlined style={{ fontSize: '32px', color:"DodgerBlue" }}/></Link>
+          <Link to="/about"><InfoCircleOutlined style={{ fontSize: '32px',color:"SlateBlue" }}/></Link>
           
           </Space></div>
         </nav>
@@ -94,10 +95,10 @@ export default function App() {
       </Content>
       <Footer>
         <Copyright /><img
-              src="/src/assets/SHAPE_logo.png"
+              src="/src/assets/dogLogo2.png"
               alt="profile-img"
               className="profile-img-card"
-              style={{float:'right'}}
+              style={{float:'right', width: '100px', height: '100px', margin: '10px 10px 10px 10px'}}
             />
       </Footer>
       <FloatButton.BackTop  />

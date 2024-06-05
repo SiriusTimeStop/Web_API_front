@@ -7,6 +7,7 @@ import axios from 'axios';
 import {LoadingOutlined} from '@ant-design/icons';
 import PostIcon from './posticon';
 import Displaycomment from './comments';
+import SearchDog from './dogSearch';
 
 
 
@@ -37,6 +38,9 @@ const dogTable = () => {
        
     
       return(<>
+      <Col span={12}>
+      { <SearchDog/>}
+      </Col>
         <Row gutter={[16,16]} style={{marginLeft:"15px"}}>
           {
             dogTable && dogTable.map(({id, dogname, maintext, imageurl, links})=> (
@@ -59,6 +63,7 @@ const dogTable = () => {
                 
               </Col>
             ))
+
           }
         </Row></>
       )
