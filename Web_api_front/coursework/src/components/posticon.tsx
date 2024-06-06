@@ -68,14 +68,26 @@ function getIcon (theme:any, iconType:any) {
                 window.location.reload();
               }
                else{
-                alert("you have post like already")
-              //  console.log('responsejson.data.message ',responsejson.data.message)
-               }
+                axios.delete(props.countLink, {
+                  headers: {
+                    'Authorization': `Basic ${localStorage.getItem('aToken')}`
+                  }
+                })
+                  .then(responsejson => {
+                    console.log('responsejson.data ', responsejson.data);
+                    if (responsejson.data.userid && responsejson.data.message === "unliked") {
+                      alert("Post unliked");
+                      window.location.reload();
+                    } else {
+                      alert("Post liked deleted");
+                    }
+                  });
+              }
             })
             .catch(err => {
-            console.log(`${props.type} Check network problems pls. ${props.id}`);
-               alert("Check network problems");
-        })
+              console.log(`${props.type} Check network problems pls. ${props.id}`);
+              alert("Check network problems");
+            })
        )
       }
   

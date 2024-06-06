@@ -12,7 +12,7 @@ import Displaycomment from './comments';
 
 
 const FavCard = (props:any) => {
-  const [articles, setArticles] = React.useState(null);
+  const [dogs, setDogs] = React.useState(null);
   const [loading, setLoading] = React.useState(true);
   const [theme, setTheme] = React.useState('outlined');
   const navigate: NavigateFunction = useNavigate();
@@ -21,12 +21,12 @@ const FavCard = (props:any) => {
  
  React.useEffect(()=>{
   
- // console.log(`path ${api.uri}/articles/fav`)  
+ // console.log(`path ${api.uri}/dogs/fav`)  
   //console.log (`atoken ,Basic ${localStorage.getItem('aToken')}`)         
   let config = {
     method: 'get',
     maxBodyLength: Infinity,
-    url: `${api.uri}/articles/fav`,
+    url: `${api.uri}/dogs/fav`,
     headers: { 
       'Authorization': `Basic ${localStorage.getItem('aToken')}`
     }
@@ -34,12 +34,12 @@ const FavCard = (props:any) => {
   
   axios.request(config)
   .then((results) => {      
-   //console.log(`path ${api.uri}/articles/fav`) 
+   //console.log(`path ${api.uri}/dogs/fav`) 
    //console.log('results.data ', JSON.stringify(results.data))
    //console.log('filterting....')
-    let filterArticle = filterPosts(results.data, JSON.parse(origin))
-    console.log("filterArticle ", filterArticle)
-    setArticles(filterArticle )
+    let filterDogs = filterPosts(results.data, JSON.parse(origin))
+    console.log("filterDogs", filterDogs)
+    setDogs(filterDogs )
     
   })    
     .then(()=>{   
@@ -47,7 +47,7 @@ const FavCard = (props:any) => {
  },[])
   
   
-  console.log('after filter article ',articles)
+  console.log('after filter dogs ',dogs)
   
   function getIcon (theme:string) {
     let Icon;
@@ -69,8 +69,8 @@ const FavCard = (props:any) => {
     for(let i=0; i<filterarray.length;i++)
       for( let j=0; j<originarray.length;j++)
         {
-          console.log("articleid,originarray", filterarray[i].articleid, originarray[j].id)
-         if(filterarray[i].articleid== originarray[j].id)
+          console.log("dogid,originarray", filterarray[i].dogid, originarray[j].id)
+         if(filterarray[i].dogid== originarray[j].id)
           {resArr.push(originarray[j])
           break
           }  
@@ -93,7 +93,7 @@ const FavCard = (props:any) => {
       .then((results) =>{ console.log('respone ',JSON.stringify(results.data.message))
         if(results.data.message==="removed")
       {  
-          alert("This article is removed from your favorite list")
+          alert("This dog is removed from your favorite list")
           navigate("/favpage");
           window.location.reload();}
         
@@ -109,8 +109,8 @@ const FavCard = (props:any) => {
     const antIcon = <LoadingOutlined style={{ fontSize: 48}} spin />
     return(<Spin indicator={antIcon} />);
   } else {
-    if(!articles){
-      return(<div>There is no article available now.</div>)
+    if(!dogs){
+      return(<div>There is no dog available now.</div>)
     } else {
        
      
@@ -119,9 +119,9 @@ const FavCard = (props:any) => {
       
         <Row gutter={[16,16]}>
           {
-            articles && articles.map(({id, title, alltext, imageurl, links})=> (
+            dogs && dogs.map(({id, dogname, maintext, imageurl, links})=> (
             <Col  key={id}>                            
-             <Card title={title} style={{width: 300}}
+             <Card title={dogname} style={{width: 300}}
                    cover={<img alt="example" src={imageurl} />} hoverable
                    actions={[
                     <PostIcon type="like" countLink={links.likes} id={id}/>,
