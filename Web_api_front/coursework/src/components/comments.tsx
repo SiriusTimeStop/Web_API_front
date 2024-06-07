@@ -30,7 +30,7 @@ if(currentUser){
       console.log('no of msg ',article_comments.length)                    
     }) 
     .catch(err => {
-      console.log(`icon error for msg  `)
+      console.log(`icon error for msg `)
     });   
           
 }, []);
@@ -84,7 +84,7 @@ Icon=DeleteFilled;
         console.log('respone ',JSON.stringify(response.data.message))
         if(response.data.message==="removed")
       {     
-          alert("This article commentis removed by admin")
+          alert("This dog commentis removed by admin")
           navigate("/");
           window.location.reload();}       
       })

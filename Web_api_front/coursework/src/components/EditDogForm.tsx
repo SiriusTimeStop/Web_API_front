@@ -6,6 +6,7 @@ import { EditOutlined,EditFilled } from '@ant-design/icons';
 import axios from "axios";
 import { api } from './common/http-common';
 import { getCurrentUser } from "../services/auth.service";
+import Twitter from 'twitter';
 const { Title } = Typography;
 const { TextArea } = Input;
     
@@ -15,6 +16,7 @@ const EditDogForm: React.FC = (props:any) => {
     const [message, setMessage] = useState<string>("");
     const [isShow, setIsShow] = React.useState(false); 
     const aa:any = JSON.parse(localStorage.getItem('e') || "{}");
+    
    // console.log("aa  ", aa)
     //console.log('aa.title ',aa.title)
     const contentRules = [
@@ -104,7 +106,7 @@ const EditDogForm: React.FC = (props:any) => {
     </Form>
     </Modal>
     </>
-  );
+  )
 };
 
 
