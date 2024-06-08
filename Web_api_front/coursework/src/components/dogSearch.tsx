@@ -65,7 +65,7 @@ function handleChange(value:any)  {
 
   return (
    <>
-     <Col span={16}> 
+     <Col span={16} style={{ padding:'10px'}}> 
         <center><Title level={3}>Dog Search</Title></center>          
        <Search placeholder="Search Dogs"
             allowClear
@@ -78,7 +78,7 @@ function handleChange(value:any)  {
         <Option value="dogname&fields=maintext">Get all-filter by dog name & breed</Option>
         <Option value="all">Get all-without filter</Option>
         </Select>	      
-  {isSearchOK&&<Table dataSource={dogsData}>
+  {isSearchOK&&<Table dataSource={dogsData} >
    <Column title="ID" dataIndex="id" key="id" />
    <Column title="Dogname" dataIndex="dogname" key="dogname" />
    <Column title="Breed" dataIndex="maintext" key="maintext" />
