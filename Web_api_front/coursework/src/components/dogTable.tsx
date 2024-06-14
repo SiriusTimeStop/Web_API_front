@@ -46,7 +46,7 @@ const dogTable = () => {
             dogTable && dogTable.map(({id, dogname, maintext, imageurl, links})=> (
             <Col key={id}>                                          
              <Card title={dogname} style={{width: 300}}
-                   cover={<img alt="example" src={imageurl} />} hoverable
+                   cover={<img alt="example" src={imageurl} style={{height:"250px",width:"300px"}}/>} hoverable
                    actions={[
                     <PostIcon type="like" countLink={links.likes} id={id} />,
                     <Displaycomment    msgLink={links.msg} id={id}/>,
