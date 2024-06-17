@@ -16,7 +16,7 @@ import DetailArticle from './components/DetailArticle';
 import Profile from './components/Profile';
 import FavPage from './components/favpage';
 import DogBreed from './components/DogBreed';
-import { LogoutOutlined, HomeOutlined, DashboardOutlined, InfoCircleOutlined, HeartFilled, FlagOutlined } from '@ant-design/icons';
+import { LogoutOutlined, HomeOutlined, UserOutlined, InfoCircleOutlined, HeartFilled, FlagOutlined} from '@ant-design/icons';
 import Copyright from './components/Copyright';
 
 const { Header, Content, Footer } = Layout;
@@ -58,7 +58,7 @@ export default function App() {
                 />
               </Link>
               <Link to="/"><HomeOutlined style={{ fontSize: '32px', color: "Tomato" }} /></Link>
-              <Link to="/dashboard"><DashboardOutlined style={{ fontSize: '32px', color: "DodgerBlue" }} /></Link>
+              <Link to="/staff"><UserOutlined style={{ fontSize: '32px', color: "DodgerBlue" }} /></Link>
               <Link to="/about"><InfoCircleOutlined style={{ fontSize: '32px', color: "khaki" }} /></Link>
             </Space></div>
           </nav>
@@ -90,7 +90,7 @@ export default function App() {
         <Content>
           <Routes>
             <Route index element={<Home />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/staff" element={<Dashboard />} />
             <Route path="/about" element={<About />} />
             <Route path="/:aid" element={<DetailArticle />} />
             <Route path="/profile" element={<Profile />} />

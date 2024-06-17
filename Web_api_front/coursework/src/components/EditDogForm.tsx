@@ -90,7 +90,7 @@ const EditDogForm: React.FC = (props:any) => {
       {props.isNew? ( <TextArea rows={2}  />):( <TextArea rows={2} defaultValue={!props.isNew&&aa.summary} />)}
       </Form.Item>
 
-      <Form.Item name="locationid" label="Dog location" >
+      <Form.Item name="locationid" label="Dog location" rules={contentRules}>
       {props.isNew? ( <TextArea rows={2}  />):( <TextArea rows={2} defaultValue={!props.isNew&&aa.locationid} />)}
       </Form.Item>
 

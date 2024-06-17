@@ -38,9 +38,10 @@ const Location = () => {
 
 
       return (<>
+      <p></p>
         <h2 style={{ color: 'DodgerBlue', fontSize: '40px', fontWeight: 'bold' }}><strong>About our Pet shelter locations</strong></h2>
         <img style={{ width: "900px" }}
-          src="/src/assets/shelters.jpeg"
+          src="/src/assets/dogfamily.jpeg"
           alt="shelter-img"
           className="profile-img-card"
         />
