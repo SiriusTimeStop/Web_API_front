@@ -82,7 +82,7 @@ else {
   const Icon = getIcon(theme)
   return (
     <>
-      <h2 style={{ color: 'black' }}> Welcome to Blog Dashboard</h2>   
+      <h2 style={{ color: 'DodgerBlue', fontSize: '40px', fontWeight: 'bold' }}>Dog Detail Information</h2>   
       
             <Col  span={24} >                                   
              <Card title={dogTable.dogname} style={{width: 300,marginLeft:"100px"}}

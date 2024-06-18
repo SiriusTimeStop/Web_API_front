@@ -17,7 +17,7 @@ const Profile: React.FC = () => {
   return (
     <>
       <p></p>
-      <h2 style={{ color: "#135200", marginLeft: "15px" }}>
+      <h2 style={{ color: 'DodgerBlue', fontSize: '40px', fontWeight: 'bold'}}>
         <strong>{currentUser.username}</strong> Profile
       </h2>
 

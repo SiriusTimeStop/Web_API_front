@@ -5,9 +5,10 @@ import FavCard from './FavCard'
 function FavPage() {
   return (
     <> 
-    <h2 style={{ color: 'green' }}> Welcome to Blog client Demo</h2>     
+    <p></p>
+    <h2 style={{ color: 'DodgerBlue', fontSize: '40px', fontWeight: 'bold' }}>Favorite Dogs</h2>     
      
-      <FavCard />
+      <FavCard style={{ margin: "10px" }} />
     </>
   )
 }

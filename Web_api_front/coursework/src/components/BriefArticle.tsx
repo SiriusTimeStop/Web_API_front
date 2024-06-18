@@ -42,7 +42,7 @@ const Staff = () => {
           {staffs.map(({ username, role }) => {
             if (role === "admin") {
               return (
-                <Col key={role}>
+                
                   <Card
                     title={role}
                     hoverable
@@ -57,7 +57,7 @@ const Staff = () => {
                       <hr/>
                     <p style={{ fontSize: "30px", fontWeight: "bold" }}>{username}</p>
                   </Card>
-                </Col>
+                
               );
             }
             return null; // Skip rendering if role is not admin
